@@ -1,10 +1,10 @@
-import react from 'react';
+import React from 'react';
 
 function MainContentHead (props) {
   return (
-   <div>
-    <h2>{props.title}</h2>
-    <p>{props.description}</p>
+   <div className="main-content__head">
+    <h2 className="main-content__title">{props.title}</h2>
+    <p className="main-content__head-description">{props.description}</p>
    </div>
 
   );

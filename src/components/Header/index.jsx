@@ -1,10 +1,20 @@
 import React from 'react';
 
-import HeaderInner from '../HeaderInner';
+
+import Logo from "../Logo";
+import Navigation from "../Navigation";
+
+
 
 function Header () {
   return (
-    <HeaderInner /> 
+    <header className = "main-header">
+      <div className = "main-header__inner" >
+        <Logo />
+        <Navigation />
+      </div>
+
+    </header>
   );
 }
 
