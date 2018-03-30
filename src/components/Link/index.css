@@ -1,0 +1,6 @@
+.navigation__link {
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+ }

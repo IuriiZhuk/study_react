@@ -1,0 +1,14 @@
+.main-header__logo {
+  max-width: 20%;
+  margin-right: 50px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.logo__img {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px; 
+}

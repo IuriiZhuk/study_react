@@ -1,0 +1,29 @@
+.other-offers {
+  margin-bottom: 100px;
+  text-align: center; 
+}
+.other-offers__link {
+  text-transform: uppercase;
+  font-size: 35px;
+  color: #d89b64; 
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 3px solid #d89b64  ;
+  padding: 8px 16px;
+}
+
+@media only screen and (min-width: 781px) and (max-width: 1149px) {
+  .other-offers__link {
+
+    font-size: 35px;
+   
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .other-offers__link {
+
+    font-size: 24px;
+   
+  }
+}

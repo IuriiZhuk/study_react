@@ -1,0 +1,31 @@
+.main-header {
+  max-width: 1300px;
+  min-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 24px;
+}
+.main-header__inner {
+  display: flex;
+  max-width: 1172px;
+  width: 100%;
+  padding: 0 16px 0 16px;
+  background: #fff;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+
+@media only screen and (min-width: 781px) and (max-width: 1149px) {
+  
+  .main-header {
+    font-size: 20px; }
+}
+
+@media only screen and (max-width: 780px) {
+  
+  .main-header {
+    font-size: 12px; }
+}

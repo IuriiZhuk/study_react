@@ -1,0 +1,14 @@
+.main-page-dishes-type {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+@media only screen and (max-width: 780px) {
+  
+  .main-page-dishes-type {
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+  }

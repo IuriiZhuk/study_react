@@ -1,5 +1,7 @@
 import React from 'react';
 
+import "./index.css";
+
 function MainContentHead (props) {
   return (
    <div className="main-content__head">

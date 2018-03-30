@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
+
+import "./index.css";
 
 function Logo () {
   return (
-    <div>
-      <img />
+    <div className="main-header__logo logo">
+      <img className ="logo__img  "/>
       <p>Gratia</p>
     </div>
   );
