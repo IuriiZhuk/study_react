@@ -1,0 +1,16 @@
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+  @media only screen and (min-width: 781px) and (max-width: 1149px) {
+    .menu {
+      justify-content: space-around;
+      font-size: 12px; }
+     
+    }
+  @media only screen and (max-width: 780px) {
+    .menu {
+      justify-content: space-around; }
+    }
