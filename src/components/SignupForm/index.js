@@ -14,9 +14,7 @@ class SignupForm extends Component {
        
     modal.style.display='none';
   }
-    
-  
-
+      
   handleClickCloseAround = (event) => {
 
     let modal = document.getElementById('signUp');
