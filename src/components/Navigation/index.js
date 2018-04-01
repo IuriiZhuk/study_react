@@ -2,6 +2,7 @@ import React from 'react';
 
 import Link from '../Link';
 import "./index.css";
+import SignupForm from '../SignupForm';
 
 function Navigation() {
   return (
@@ -11,7 +12,7 @@ function Navigation() {
     <Link title ="Gallery"/>
     <Link title ="Contact"/>
     <Link title ="Login"/>
-    <Link title ="Sign Up"/>
+    <SignupForm />
     </nav>
   );
 }

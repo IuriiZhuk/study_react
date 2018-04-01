@@ -9,8 +9,10 @@ function App () {
   return (
     <div>
       <Header />
-      {/* <MainContent /> */}
-      <MenuMainContent />
+      <MainContent />
+      {/* <MenuMainContent /> */}
+
+     
 
       <Footer />
     </div>
