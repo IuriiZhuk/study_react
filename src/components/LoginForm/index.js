@@ -13,23 +13,7 @@ class LoginForm extends Component {
     };
 }
 
-  handleClickBlock = () => {
-    document.getElementById('loginModal').style.display='block';
-  }
-  handleClickNone = (event) => {
-
-    let modal = document.getElementById('loginModal')
-       
-    modal.style.display='none';
-  }
-      
-  handleClickCloseAround = (event) => {
-
-    let modal = document.getElementById('loginModal');
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
-  }
+ 
 
 
 
@@ -44,7 +28,6 @@ handlePasswordChange = (event) => {
         password : event.target.value
     });
 }
-
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -71,22 +54,21 @@ handlePasswordChange = (event) => {
     
     usersDb[authenticatedUserIndex].isLogged = true;
     console.log(usersDb[authenticatedUserIndex]);
-    
-    
-
-   
-
 
 }
 
 
     render() {
-        return (
-           <a href="#">
-                <button onClick={this.handleClickBlock}>Login</button>
+      
 
-                <div className="loginFormModal" id="loginModal" onClick={this.handleClickCloseAround}>
-                  <span className ="close" title="Close" onClick={this.handleClickNone}>&times;</span>
+      // Render nothing if the "show" prop is false
+    if(!this.props.show) {
+      return null;
+    }
+        return (
+           
+                <div className="loginFormModal" id="loginModal">
+                  <span className ="close" title="Close" onClick={this.props.onClose}>&times;</span>
 
                   <form onSubmit={this.handleSubmit} action="" className="LoginModalContent">
                     
@@ -103,12 +85,12 @@ handlePasswordChange = (event) => {
                     </div>
 
                     <div className="container container-bottom clearfix">
-                      <button className="cancelbtn" onClick={this.handleClickNone}> Cancel</button>
+                      <button className="cancelbtnLogin" onClick={this.props.onClose}> Cancel</button>
                      
                     </div>
                   </form>
                 </div>
-           </a> 
+           
             
         );
     }

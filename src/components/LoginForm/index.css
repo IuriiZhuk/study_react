@@ -25,10 +25,11 @@ button:hover {
 }
 
 /* Extra styles for the cancel button */
-.cancelbtngin {
-    width: auto;
+.cancelbtnLogin {
+     width: 100%;
     padding: 10px 18px;
     background-color: #f44336;
+    
 }
 
 /* Center the image and position the close button */
@@ -49,7 +50,7 @@ span.psw {
 
 /* The Modal (background) */
 .loginFormModal {
-    display: none; /* Hidden by default */
+    display: block; 
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -57,8 +58,7 @@ span.psw {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: #474e5d;
     padding-top: 60px;
 }
 

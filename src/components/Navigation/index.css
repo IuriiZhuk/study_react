@@ -4,3 +4,14 @@
   align-items: center;
   flex-wrap: wrap;
 } 
+
+.navigation__link {
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+ }
+
+ .navigation__link:hover {
+   color: orange;
+ }

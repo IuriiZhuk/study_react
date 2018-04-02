@@ -11,24 +11,7 @@ class SignupForm extends Component {
       };
   }
 
-  handleClickBlock = () => {
-    document.getElementById('signUp').style.display='block';
-  }
-  handleClickNone = (event) => {
-
-    let modal = document.getElementById('signUp')
-       
-    modal.style.display='none';
-  }
-      
-  handleClickCloseAround = (event) => {
-
-    let modal = document.getElementById('signUp');
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
-  }
-  
+ 
  
 
   handleEmailChange = (event) => {
@@ -69,12 +52,16 @@ class SignupForm extends Component {
 
   
     render() {
-        return (
-            <a href="#">
-                <button onClick={this.handleClickBlock} >Sign Up</button>
 
-                <div className="modalSignUp" id="signUp" onClick={this.handleClickCloseAround} >
-                    <span className="close" title="Close Modal" onClick={this.handleClickNone}>&times;</span>
+        if(!this.props.show) {
+            return null;
+          }
+
+        return (
+            
+
+                <div className="modalSignUp" id="signUp"  >
+                    <span className="close" title="Close Modal" onClick={this.props.onClose}>&times;</span>
 
                     <form action="" className="modalSignupContent" onSubmit={this.handleSubmit}>
                     
@@ -88,13 +75,9 @@ class SignupForm extends Component {
                             <label htmlFor="psw"><b>Password</b></label>
                             <input  onChange={this.handlePasswordChange} type="password" placeholder="Enter Password" name ="psw" required/>
 
-                            
-                            {/* <label htmlFor="psw-repeat"><b>Repeat Password</b></label>
-                            <input type="password" placeholder="Enter Password" name ="psw-repeat" required/> */}
-
-                            
+                                                                                
                             <div class="clearfix">
-                              <button type="button" onClick={this.handleClickNone} className="cancelbtn">Cancel</button>
+                              <button type="button" onClick={this.props.onClose} className="cancelbtn">Cancel</button>
                               <button type="submit" class="signupbtn">Sign Up</button>
                             </div>
 
@@ -104,7 +87,7 @@ class SignupForm extends Component {
                     </form>
 
                 </div>
-            </a>
+            
         );
     }
 
