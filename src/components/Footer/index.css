@@ -15,7 +15,7 @@
 
 .main-footer__logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: crow;
   align-items: center; 
 }
 
@@ -29,3 +29,10 @@
 .social {
   display: flex;
   justify-content: center; }
+
+  .social__link {
+    padding: 20px;
+    color: #d89b64;
+    border-radius: 50%;
+    font-size: 30px;
+    margin-right: 8px; }

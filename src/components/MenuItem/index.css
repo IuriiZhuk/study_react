@@ -1,15 +1,15 @@
-/* .menu__main-dishes {
-  background: url("./img/main-dishes.jpg") center center no-repeat; }
+.menu__main-dishes {
+  background: url("../../img/main-dishes.jpg") center center no-repeat; }
 .menu__soups {
-  background: url("./img/soup.jpg") center center no-repeat; }
+  background: url("../../img/soup.jpg") center center no-repeat; }
 .menu__hamburges {
-  background: url("./img/hamburger.png") center center no-repeat; }
+  background: url("../../img/hamburger.png") center center no-repeat; }
 .menu__desserts {
-  background: url("./img/desserts.jpg") center center no-repeat; }
+  background: url("../../img/desserts.jpg") center center no-repeat; }
 .menu__barbecue {
-  background: url("./img/barbecue.jpg") center center no-repeat; }
+  background: url("../../img/barbecue.jpg") center center no-repeat; }
 .menu__salad {
-  background: url("./img/salads.jpg") center center no-repeat; } */
+  background: url("../../img/salads.jpg") center center no-repeat; }
 .menu__item {
   display: flex;
   flex-direction: column;

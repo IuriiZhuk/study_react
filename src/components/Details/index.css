@@ -1,11 +1,12 @@
   .details {
     width: 100%;
-    /* background: url("./img/details_bg.jpg") center center no-repeat; */
+    background: url("../../img/details_bg.jpg") center center no-repeat;
     background-size: cover;
     min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center; 
+    margin-bottom: 32px
   }
   .details__position {
     display: flex;

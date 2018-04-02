@@ -9,7 +9,7 @@
  }
 
  .desserts {
-  /* background: url("./img/desert__bg.jpg") center center no-repeat; */
+  background: url("../../img/desert__bg.jpg") center center no-repeat;
   background-size: cover; 
 }
 .desserts__title {
@@ -31,7 +31,7 @@
 }
 
 .smoothies {
-  /* background: url("./img/smoothies_bg.jpg") center center no-repeat; */
+  background: url("../../img/smoothies_bg.jpg") center center no-repeat;
   background-size: cover;
   padding-top: 380px; 
 }
@@ -52,7 +52,7 @@
   }
 
 .breakfast {
-  /* background: url("./img/breakfast__bg.jpg") center center no-repeat; */
+  background: url("../../img/breakfast__bg.jpg") center center no-repeat;
   background-size: cover;
  }
   .breakfast__title {
@@ -81,6 +81,11 @@
       font-size: 18px; } }
   
   @media only screen and (max-width: 780px) {
+    .dishes-type-item {
+      padding: 30px 8px;
+      margin-bottom: 10px;
+     }
+
     .desserts__title, .smoothies__title, .breakfast__title {
       font-size: 20px; }
     .desserts__description, .smoothies__description, .breakfast__description {

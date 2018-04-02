@@ -4,7 +4,7 @@ import "./index.css";
 
 function Details () {
   return (
-    <section className="deteails">
+    <section className="details">
       <div className="details__position">
         <h2 className="details__title">Details</h2>
         <p className="details__description">Lorem ipsum dolor sit amet.</p>

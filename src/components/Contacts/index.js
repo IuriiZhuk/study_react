@@ -1,4 +1,5 @@
-import React, {Component,Fragment} from 'react';
+import React, {Component} from 'react';
+
 import './index.css';
 
 class Contacts extends Component {

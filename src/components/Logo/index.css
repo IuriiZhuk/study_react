@@ -2,6 +2,7 @@
   max-width: 20%;
   margin-right: 50px;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -11,4 +12,12 @@
   margin-right: 10px;
   width: 30px;
   height: 30px; 
+}
+
+.main-footer__logo {
+  
+  margin-right: 50px;
+  flex-direction: row;
+  font-size: 20px;
+  margin: 0 auto;
 }
