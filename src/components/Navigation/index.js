@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Link from '../Link';
 import "./index.css";
 import SignupForm from '../SignupForm';
 import LoginForm from '../LoginForm';
 
-function Navigation() {
+class Navigation extends Component {
+ 
+    render () {
+ 
   return (
     <nav className = "navigation">
     <Link title ="About"/>
@@ -17,5 +20,7 @@ function Navigation() {
     </nav>
   );
 }
+}
+
 
 export default Navigation ;
