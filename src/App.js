@@ -10,6 +10,8 @@ import About from './components/About';
 import MenuMainContent from './components/MenuMainContent';
 import Contacts from './components/Contacts';
 import BookForm from './components/BookForm';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
 
 
 
@@ -30,6 +32,8 @@ class App extends Component {
             <Route exact path="/menu" component={MenuMainContent} />
             <Route exact path="/contact" component={Contacts} />
             <Route exact path="/book" component={BookForm} />
+            <Route exact path="/login" component={LoginForm} />
+            <Route exact path="/signup" component={SignupForm} />
             
             <Footer />
           </Fragment>

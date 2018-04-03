@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
+
 
 import './index.css';
 
@@ -7,7 +9,9 @@ class SignupForm extends Component {
       super(props);
       this.state = {
           email : '',
-          password : ''
+          password : '',
+          orders:[],
+          
       };
   }
 
@@ -30,26 +34,23 @@ class SignupForm extends Component {
     event.preventDefault();
 
     let state = this.state;
-
-
-    let usersDb = JSON.parse(localStorage.getItem('users'));
+    let usersDb = JSON.parse(sessionStorage.getItem('users'));
     if (!usersDb) {usersDb = []}
-
 
     let newUser = {
         email : state.email,
         password : state.password
     };
-
-    usersDb = usersDb.concat(newUser);
     
-    localStorage.setItem('users', JSON.stringify(usersDb));
+    console.log("userDb", usersDb);
+    usersDb = usersDb.concat(newUser);
+    sessionStorage.setItem('users', JSON.stringify(usersDb));
+    console.log(JSON.parse(sessionStorage.getItem('users')));
+    alert(`Thank's for your registration`);
 
-    console.log(JSON.parse(localStorage.getItem('users')));
-
-}
-
-
+    this.props.onClose();
+    }
+    
   
     render() {
 
@@ -57,7 +58,7 @@ class SignupForm extends Component {
             return null;
           }
 
-        return (
+            return (
             
 
                 <div className="modalSignUp" id="signUp"  >
@@ -78,7 +79,7 @@ class SignupForm extends Component {
                                                                                 
                             <div class="clearfix">
                               <button type="button" onClick={this.props.onClose} className="cancelbtn">Cancel</button>
-                              <button type="submit" class="signupbtn">Sign Up</button>
+                              <button type="submit"  class="signupbtn">Sign Up</button>
                             </div>
 
                         
@@ -86,13 +87,15 @@ class SignupForm extends Component {
 
                     </form>
 
+                     {<Redirect to={'/'}/>}
+
                 </div>
             
         );
     }
 
-}
 
+}
 export default SignupForm;
 
 
