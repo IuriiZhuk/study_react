@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 
 import './index.css';
 
@@ -33,7 +34,7 @@ handlePasswordChange = (event) => {
     event.preventDefault();
     let state = this.state;
 
-    let usersDb = JSON.parse(localStorage.getItem('users'));
+    let usersDb = JSON.parse(sessionStorage.getItem('users'));
 
     console.log(usersDb);
 
@@ -50,19 +51,23 @@ handlePasswordChange = (event) => {
     console.log(authenticatedUserIndex);
     console.log(usersDb[authenticatedUserIndex]);
 
-    if (authenticatedUserIndex === -1 ) {alert(`Please check e-mail && password`)}
-    
-    usersDb[authenticatedUserIndex].isLogged = true;
+    if (authenticatedUserIndex === -1 ) {alert(`Please check e-mail && password`)
+    return;
+  }
+   
+    alert(`You are successfully loggin`);
+   
+
+    this.props.onClose();
     console.log(usersDb[authenticatedUserIndex]);
+    
 
 }
 
 
     render() {
       
-
-      // Render nothing if the "show" prop is false
-    if(!this.props.show) {
+      if(!this.props.show) {
       return null;
     }
         return (
@@ -89,8 +94,9 @@ handlePasswordChange = (event) => {
                      
                     </div>
                   </form>
-                </div>
-           
+                
+                <Redirect from='/login' to='/personal'/>  
+              </div>          
             
         );
     }

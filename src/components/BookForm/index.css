@@ -18,7 +18,7 @@
     background:none;
     border: none;
   }
-  .book-table__date {
+  /* .book-table__date {
     width: 50%; }
   .book-table__time {
     width: 29%; }
@@ -29,7 +29,7 @@
   .book-table__phone {
     width: 49%; }
   .book-table__email {
-    width: 100%; }
+    width: 100%; } */
   .book-table__text-area {
     width: 100%;
     margin-bottom: 16px;
@@ -42,7 +42,8 @@
   .book-table__btn-wrapper {
     width: 100%;
     border: none;
-    padding: 0; }
+    padding: 0;
+     }
   .book-table__btn {
     width: 100%;
     background: #d89b64;
@@ -51,7 +52,11 @@
     border: 1px solid #d89b;
     border-radius: 25px;
     padding: 16px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+  }
 
 input {
   width: 100%;
@@ -66,3 +71,26 @@ input {
     width: 100%; }
   .input {
     width: 100%; } }
+
+
+    /* The Modal (background) */
+.bookFormModal {
+  display: block; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.bookModalContent {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}

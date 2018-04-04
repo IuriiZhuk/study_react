@@ -1,0 +1,27 @@
+.personal__title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.bookFormVisible {
+  margin-bottom: 30px;;
+}
+
+.orderList {
+  margin: 0;
+  padding: 0;
+
+}
+.orderItem {
+  padding: 8px 8px;
+  margin-bottom: 16px;
+}
+
+.deleteOrder {
+  margin-left: 15px;
+  padding: 8px;
+  background: orange;
+  color: #fff;
+  cursor: pointer;
+  
+}

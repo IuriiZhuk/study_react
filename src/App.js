@@ -12,6 +12,7 @@ import Contacts from './components/Contacts';
 import BookForm from './components/BookForm';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
+import Personal from './components/Personal';
 
 
 
@@ -34,7 +35,7 @@ class App extends Component {
             <Route exact path="/book" component={BookForm} />
             <Route exact path="/login" component={LoginForm} />
             <Route exact path="/signup" component={SignupForm} />
-            
+            <Route exact path = "/personal" component={Personal}/>
             <Footer />
           </Fragment>
       </Router>

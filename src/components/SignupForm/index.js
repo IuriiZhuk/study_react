@@ -39,14 +39,18 @@ class SignupForm extends Component {
 
     let newUser = {
         email : state.email,
-        password : state.password
+        password : state.password,
+        orders:[]
     };
     
     console.log("userDb", usersDb);
     usersDb = usersDb.concat(newUser);
     sessionStorage.setItem('users', JSON.stringify(usersDb));
-    console.log(JSON.parse(sessionStorage.getItem('users')));
+
+    console.log(`JSON.parse(sessionStorage.getItem('users'))`, JSON.parse(sessionStorage.getItem('users')));
     alert(`Thank's for your registration`);
+
+    console.log(`userDb`, usersDb);
 
     this.props.onClose();
     }

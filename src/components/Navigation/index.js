@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 
 import "./index.css";
 import SignupForm from '../SignupForm';
@@ -18,6 +18,7 @@ class Navigation extends Component {
   }
 
   toggleModalLogin = () => {
+    
     this.setState({
     isOpenLogin: !this.state.isOpenLogin
     });
