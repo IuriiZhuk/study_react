@@ -49,14 +49,12 @@ handlePasswordChange = (event) => {
     if (authenticatedUserIndex === -1 ) {alert(`Please check e-mail && password`)
     return;
   }
-   
+    
     alert(`You are successfully loggin`);
-
-
     let currentUser = usersDb[authenticatedUserIndex];
     sessionStorage.setItem('currnet', JSON.stringify(currentUser));
    
-
+    
     this.props.onClose();
     
     

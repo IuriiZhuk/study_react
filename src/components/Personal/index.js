@@ -91,6 +91,9 @@ class Personal extends Component {
 
 
   render(){
+    if(!this.props.showUserPage) {
+      return null;
+    }
    
      const ordersList =
     
