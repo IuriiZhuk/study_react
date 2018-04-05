@@ -46,31 +46,25 @@ class BookForm extends Component {
 
   getUser = () => {
 
-    let user = JSON.parse(sessionStorage.getItem('users')); 
+    let user = JSON.parse(sessionStorage.getItem('currnet')); 
    return user;
 
   }
 
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
 
     let currentUser = this.getUser();
-    console.log(`currentUser`,currentUser);
-    console.log(`currentUser.order`,currentUser.orders);
-
-
     let orderList = currentUser.orders.concat(this.state);
-    
 
     let userAfterOrder = {
       email: currentUser.email,
       password : currentUser.password,
       orders : orderList
     }
-
-    sessionStorage.setItem('users', JSON.stringify(userAfterOrder));
-   
+    sessionStorage.setItem('currnet', JSON.stringify(userAfterOrder));
+    this.props.onChangeOrder();
     this.props.onClose();
    
   } 
@@ -111,8 +105,8 @@ class BookForm extends Component {
                 <input type="tel" onChange={this.handleMobileChange} className="input " placeholder="Phone number"required />
               </div>
               
-              <div className = "book-table__btn-wrapper btn">
-                <input type="submit" className="input book-table__btn" value="Book a Table"/>
+              <div  className = "book-table__btn-wrapper btn">
+                <input  type="submit" className="input book-table__btn" value="Book a Table"/>
               </div>
               </div>
               

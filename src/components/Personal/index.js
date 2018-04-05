@@ -18,14 +18,14 @@ class Personal extends Component {
   }
 
 
-  getUser = () => {
+  getCurrnetUser = () => {
 
-    let {email,password,orders} = JSON.parse(sessionStorage.getItem('users')); 
+    let {email,password,orders} = JSON.parse(sessionStorage.getItem('currnet')); 
     
    
     this.setState({
       email,
-      password,
+      password, 
      orders
 
     })
@@ -33,9 +33,20 @@ class Personal extends Component {
 
   }
 
-  componentDidMount= () => {
-    this.getUser();
+  getOrders = () => {
+    let {orders} = JSON.parse(sessionStorage.getItem('currnet')); 
+    
+   
+    this.setState({
+      orders
+
+    })
+   
   }
+
+ componentDidMount = () => {
+  this.getCurrnetUser()
+ }
 
   toggleModalBookForm = () => {
     this.setState({
@@ -44,10 +55,10 @@ class Personal extends Component {
 
   }
 
-  eachOrder = (order, key ) => (
-    <li className="orderItem" key={key} index = {key}>
+  eachOrder = (order, index ) => (
+    <li className="orderItem" key={index} indexItem = {index}>
       {`Date : ${order.date} Time:${order.time} Number of people : ${order.count} Person: ${order.name} Mobile : ${order.mobile}`} 
-      <span onClick={this.deleteOrder} className="deleteOrder">Delete</span>
+      <span onClick={this.deleteOrder.bind(this,index)} className="deleteOrder">Delete</span>
     </li>
     ) 
 
@@ -55,9 +66,11 @@ class Personal extends Component {
 
 
   deleteOrder = (index) => {
-    let orders = this.state.orders
+    let orders = this.state.orders;
+    console.log(orders);
+    
     orders.splice(index,1)
-    console.log(this.state.orders);
+    
     this.setState({
       orders : orders
     })
@@ -68,19 +81,19 @@ class Personal extends Component {
       orders : this.state.orders
     }
 
-    sessionStorage.setItem('users', JSON.stringify(userAfterDelete));
+    sessionStorage.setItem('currnet', JSON.stringify(userAfterDelete));
     
    
 
   }
 
-  
+
 
   render(){
-      
+   
      const ordersList =
     
-      this.state.orders.length === 0 ? 
+      this.state.orders === ""|| undefined ? 
       <h3 className="noOrder" > No orders </h3> :
     <div>
       <h3 className="orderTitle"> Your Orders : </h3>
@@ -107,6 +120,7 @@ class Personal extends Component {
 
         <BookForm show ={this.state.isOpenBookForm}
                   onClose={this.toggleModalBookForm}
+                  onChangeOrder={this.getOrders}
           />
         
       </div>

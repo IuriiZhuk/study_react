@@ -56,10 +56,14 @@ handlePasswordChange = (event) => {
   }
    
     alert(`You are successfully loggin`);
+
+
+    let currentUser = usersDb[authenticatedUserIndex];
+    sessionStorage.setItem('currnet', JSON.stringify(currentUser));
    
 
     this.props.onClose();
-    console.log(usersDb[authenticatedUserIndex]);
+    
     
 
 }

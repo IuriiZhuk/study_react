@@ -33,26 +33,24 @@ class SignupForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    let state = this.state;
     let usersDb = JSON.parse(sessionStorage.getItem('users'));
+
+    console.log(usersDb);
+
+
     if (!usersDb) {usersDb = []}
 
     let newUser = {
-        email : state.email,
-        password : state.password,
+        email : this.state.email,
+        password : this.state.password,
         orders:[]
     };
     
-    console.log("userDb", usersDb);
-    console.log("typeofguserDb", typeof(usersDb));
     usersDb = usersDb.concat(newUser);
     sessionStorage.setItem('users', JSON.stringify(usersDb));
-
-    console.log(`JSON.parse(sessionStorage.getItem('users'))`, JSON.parse(sessionStorage.getItem('users')));
     alert(`Thank's for your registration`);
 
-    console.log(`userDb`, usersDb);
-
+  
     this.props.onClose();
     }
     
