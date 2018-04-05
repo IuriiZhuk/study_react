@@ -87,8 +87,8 @@ class BookForm extends Component {
         <section clasNames="menu-main-content__menu book-form">
         <div className="bookFormModal" >
           <span className ="close" title="Close" onClick={this.props.onClose}>&times;</span>
-            <form onSubmit = {this.handleSubmit} className="book-table" action="post" className="bookModalContent">
-            <div className="container">
+            <form onSubmit = {this.handleSubmit} className="book-table bookModalContent" action="post" >
+            <div className="bookcontainer">
               <div className = "book-table__date book-table__input-wrapper ">
                 <input type="date" onChange={this.handleDateChange} className="inputBook " />
               </div>

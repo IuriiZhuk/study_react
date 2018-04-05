@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
+
 
 import './index.css';
 
@@ -45,11 +45,6 @@ handlePasswordChange = (event) => {
 
     // let authenticatedUser = usersDb.find((item) => item.email === user.email && item.password === user.password )
     let authenticatedUserIndex = usersDb.findIndex((item) => item.email === user.email && item.password === user.password )
-    
-
-    // console.log(usersDb);
-    // console.log(authenticatedUserIndex);
-    // console.log(usersDb[authenticatedUserIndex]);
 
     if (authenticatedUserIndex === -1 ) {alert(`Please check e-mail && password`)
     return;
@@ -69,7 +64,7 @@ handlePasswordChange = (event) => {
 }
 
 
-    render() {
+    render()  {
       
       if(!this.props.show) {
       return null;
@@ -99,7 +94,10 @@ handlePasswordChange = (event) => {
                     </div>
                   </form>
                 
-                <Redirect from='/login' to='/personal'/>  
+
+                
+
+                  
               </div>          
             
         );

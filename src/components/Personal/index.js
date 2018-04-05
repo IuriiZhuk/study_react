@@ -20,6 +20,7 @@ class Personal extends Component {
 
   getCurrnetUser = () => {
 
+    
     let {email,password,orders} = JSON.parse(sessionStorage.getItem('currnet')); 
     
    
@@ -30,8 +31,8 @@ class Personal extends Component {
 
     })
     
-
   }
+  
 
   getOrders = () => {
     let {orders} = JSON.parse(sessionStorage.getItem('currnet')); 

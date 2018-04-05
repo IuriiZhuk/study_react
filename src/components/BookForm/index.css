@@ -66,6 +66,11 @@ input {
   outline: none; 
 }
 
+.bookcontainer {
+  width: 100%;
+  padding: 16px;
+}
+
 @media only screen and (max-width: 779px) {
   .book-table div {
     width: 100%; }
