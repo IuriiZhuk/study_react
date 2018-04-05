@@ -43,12 +43,36 @@ class BookForm extends Component {
     });
   } 
 
-  handleSubmit = (event) => {
-   
-    event.preventDefault();
-    console.log(this.state);
-    this.props.onClose();
 
+  getUser = () => {
+
+    let user = JSON.parse(sessionStorage.getItem('users')); 
+   return user;
+
+  }
+
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    let currentUser = this.getUser();
+    console.log(`currentUser`,currentUser);
+    console.log(`currentUser.order`,currentUser.orders);
+
+
+    let orderList = currentUser.orders.concat(this.state);
+    
+
+    let userAfterOrder = {
+      email: currentUser.email,
+      password : currentUser.password,
+      orders : orderList
+    }
+
+    sessionStorage.setItem('users', JSON.stringify(userAfterOrder));
+   
+    this.props.onClose();
+   
   } 
 
 
@@ -72,19 +96,19 @@ class BookForm extends Component {
             <form onSubmit = {this.handleSubmit} className="book-table" action="post" className="bookModalContent">
             <div className="container">
               <div className = "book-table__date book-table__input-wrapper ">
-                <input type="date" onChange={this.handleDateChange} className="inputBook "/>
+                <input type="date" onChange={this.handleDateChange} className="inputBook " />
               </div>
               <div className = "book-table__time book-table__input-wrapper">
-                <input type="time" onChange={this.handleTimeChange} className="input " placeholder="Time"/>
+                <input type="time" onChange={this.handleTimeChange} className="input " placeholder="Time" />
               </div>
               <div className = "book-table__people-count book-table__input-wrapper ">
-                <input type="text" onChange={this.handleCountChange} className="input " placeholder="Number of people"/>
+                <input type="text" onChange={this.handleCountChange} className="input " placeholder="Number of people"required />
               </div>
               <div className = "book-table__fio book-table__input-wrapper">
-                <input type="text" onChange={this.handleNameChange} className="input " placeholder=" First Name and Last Name"/>
+                <input type="text" onChange={this.handleNameChange} className="input " placeholder=" First Name and Last Name"required />
               </div>
               <div className = "book-table__phone book-table__input-wrapper">
-                <input type="tel" onChange={this.handleMobileChange} className="input " placeholder="Phone number"/>
+                <input type="tel" onChange={this.handleMobileChange} className="input " placeholder="Phone number"required />
               </div>
               
               <div className = "book-table__btn-wrapper btn">

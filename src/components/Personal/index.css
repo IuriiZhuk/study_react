@@ -13,15 +13,28 @@
 
 }
 .orderItem {
-  padding: 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 8px;
   margin-bottom: 16px;
+  border: 1px solid #d89b64;
+  font-size: 16px;
 }
 
 .deleteOrder {
   margin-left: 15px;
   padding: 8px;
-  background: orange;
+  background:#d89b64;
   color: #fff;
   cursor: pointer;
   
+}
+.noOrder {
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+.orderTitle{
+  margin-bottom: 16px;
+  font-size: 16px;
 }

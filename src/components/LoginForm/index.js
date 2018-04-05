@@ -47,9 +47,9 @@ handlePasswordChange = (event) => {
     let authenticatedUserIndex = usersDb.findIndex((item) => item.email === user.email && item.password === user.password )
     
 
-    console.log(usersDb);
-    console.log(authenticatedUserIndex);
-    console.log(usersDb[authenticatedUserIndex]);
+    // console.log(usersDb);
+    // console.log(authenticatedUserIndex);
+    // console.log(usersDb[authenticatedUserIndex]);
 
     if (authenticatedUserIndex === -1 ) {alert(`Please check e-mail && password`)
     return;

@@ -44,6 +44,7 @@ class SignupForm extends Component {
     };
     
     console.log("userDb", usersDb);
+    console.log("typeofguserDb", typeof(usersDb));
     usersDb = usersDb.concat(newUser);
     sessionStorage.setItem('users', JSON.stringify(usersDb));
 
