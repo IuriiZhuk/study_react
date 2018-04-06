@@ -80,9 +80,7 @@ class Personal extends Component {
       orders : this.state.orders
     }
 
-    sessionStorage.setItem('currnet', JSON.stringify(userAfterDelete));
-    
-   
+    sessionStorage.setItem('currnet', JSON.stringify(userAfterDelete)); 
 
   }
 

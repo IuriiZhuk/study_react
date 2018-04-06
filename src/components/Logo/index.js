@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import LogoImg from '../../img/logo_lg.jpg'
 import "./index.css";
@@ -12,5 +13,10 @@ function Logo (props) {
     </div>
   );
 }
+
+
+Logo.propTypes = {
+  styleName : PropTypes.string
+};
 
 export default Logo;

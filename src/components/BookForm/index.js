@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -90,19 +91,19 @@ class BookForm extends Component {
             <form onSubmit = {this.handleSubmit} className="book-table bookModalContent" action="post" >
             <div className="bookcontainer">
               <div className = "book-table__date book-table__input-wrapper ">
-                <input type="date" onChange={this.handleDateChange} className="inputBook " />
+                <input type="date" onChange={this.handleDateChange} className="inputBook " required />
               </div>
               <div className = "book-table__time book-table__input-wrapper">
-                <input type="time" onChange={this.handleTimeChange} className="input " placeholder="Time" />
+                <input type="time" onChange={this.handleTimeChange} className="input " placeholder="Time" required/>
               </div>
               <div className = "book-table__people-count book-table__input-wrapper ">
-                <input type="text" onChange={this.handleCountChange} className="input " placeholder="Number of people"required />
+                <input type="text" onChange={this.handleCountChange} className="input " placeholder="Number of people" required />
               </div>
               <div className = "book-table__fio book-table__input-wrapper">
-                <input type="text" onChange={this.handleNameChange} className="input " placeholder=" First Name and Last Name"required />
+                <input type="text" onChange={this.handleNameChange} className="input " placeholder=" First Name and Last Name" required />
               </div>
               <div className = "book-table__phone book-table__input-wrapper">
-                <input type="tel" onChange={this.handleMobileChange} className="input " placeholder="Phone number"required />
+                <input type="tel" onChange={this.handleMobileChange} className="input " placeholder="Phone number" required />
               </div>
               
               <div  className = "book-table__btn-wrapper btn">
@@ -121,5 +122,15 @@ class BookForm extends Component {
     }
   }
 
+
+
+
+
+
+  BookForm.propTypes = {
+    show : PropTypes.bool,
+    onClose : PropTypes.func,
+    onChangeOrder : PropTypes.func
+  }
 
 export default BookForm;

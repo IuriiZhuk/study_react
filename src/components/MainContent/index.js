@@ -2,7 +2,6 @@ import React from 'react';
 
 import MainContentHead from '../MainContentHead';
 import DishesType from '../DishesType';
-import CheckOffers from '../CheckOffers';
 import Details from '../Details';
 import SuccessType from '../SuccessType';
 
@@ -19,7 +18,6 @@ function MainContent() {
           description = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, magnam. "
          />
          <DishesType />
-         <CheckOffers />
          <Details />
          <MainContentHead 
           title = "How We Reach This" 
@@ -33,6 +31,10 @@ function MainContent() {
     </main>
   );
 }
+
+
+
+
 
 
 

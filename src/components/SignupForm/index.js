@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 import './index.css';
@@ -80,9 +81,9 @@ class SignupForm extends Component {
                             <input  onChange={this.handlePasswordChange} type="password" placeholder="Enter Password" name ="psw" required/>
 
                                                                                 
-                            <div class="clearfix">
+                            <div className="clearfix">
                               <button type="button" onClick={this.props.onClose} className="cancelbtn">Cancel</button>
-                              <button type="submit"  class="signupbtn">Sign Up</button>
+                              <button type="submit"  className="signupbtn">Sign Up</button>
                             </div>
 
                         
@@ -99,6 +100,13 @@ class SignupForm extends Component {
 
 
 }
+
+SignupForm.propTypes = {
+    show : PropTypes.bool,
+    onClose : PropTypes.func
+};
+
+
 export default SignupForm;
 
 

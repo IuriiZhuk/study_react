@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import "./index.css";
 
@@ -12,5 +13,12 @@ function SuccessTypeItem (props) {
 
   );
 }
+
+SuccessTypeItem.proptypes = {
+  styleName : PropTypes.string,
+  title : PropTypes.stgring,
+  content : PropTypes.string
+};
+
 
 export default SuccessTypeItem;

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -54,8 +54,9 @@ handlePasswordChange = (event) => {
     let currentUser = usersDb[authenticatedUserIndex];
     sessionStorage.setItem('currnet', JSON.stringify(currentUser));
    
-    
+    this.props.isUserLogin();
     this.props.onClose();
+
     
     
 
@@ -102,5 +103,13 @@ handlePasswordChange = (event) => {
     }
 
 }
+
+LoginForm.proptypes = {
+    show: PropTypes.bool,
+    isUserLogin : PropTypes.func,
+    onClose: PropTypes.func
+};
+
+
 
 export default LoginForm;

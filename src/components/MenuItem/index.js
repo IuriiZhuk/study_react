@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import "./index.css";
 
@@ -11,5 +12,11 @@ function MenuItem (props) {
     </article>
   );
 }
+
+
+MenuItem.propTypes = {
+  title: PropTypes.string,
+  description : PropTypes.string
+};
 
 export default MenuItem;
