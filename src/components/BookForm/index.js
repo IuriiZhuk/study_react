@@ -80,11 +80,11 @@ class BookForm extends Component {
         <div className="main-content__inner">
         <div className="main-content__head">
           <h2 className="main-content__title">Book A Table</h2>
-          <p clasNames="menu-main-content__title-descrip">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, magnam.</p>
+          <p className="menu-main-content__title-descrip">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, magnam.</p>
         </div>
 
 
-        <section clasNames="menu-main-content__menu book-form">
+        <section className="menu-main-content__menu book-form">
         <div className="bookFormModal" >
           <span className ="close" title="Close" onClick={this.props.onClose}>&times;</span>
             <form onSubmit = {this.handleSubmit} className="book-table bookModalContent" action="post" >

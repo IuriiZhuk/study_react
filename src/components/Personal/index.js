@@ -19,11 +19,9 @@ class Personal extends Component {
 
 
   getCurrnetUser = () => {
-
     
     let {email,password,orders} = JSON.parse(sessionStorage.getItem('currnet')); 
-    
-   
+       
     this.setState({
       email,
       password, 
@@ -57,7 +55,7 @@ class Personal extends Component {
   }
 
   eachOrder = (order, index ) => (
-    <li className="orderItem" key={index} indexItem = {index}>
+    <li className="orderItem" key={index} indexitem = {index}>
       {`Date : ${order.date} Time:${order.time} Number of people : ${order.count} Person: ${order.name} Mobile : ${order.mobile}`} 
       <span onClick={this.deleteOrder.bind(this,index)} className="deleteOrder">Delete</span>
     </li>
@@ -68,7 +66,7 @@ class Personal extends Component {
 
   deleteOrder = (index) => {
     let orders = this.state.orders;
-    console.log(orders);
+   
     
     orders.splice(index,1)
     
@@ -91,13 +89,11 @@ class Personal extends Component {
 
 
   render(){
-    if(!this.props.showUserPage) {
-      return null;
-    }
+   
    
      const ordersList =
     
-      this.state.orders === ""|| undefined ? 
+      this.state.orders === ""|| undefined ||this.state.orders.length === 0  ? 
       <h3 className="noOrder" > No orders </h3> :
     <div>
       <h3 className="orderTitle"> Your Orders : </h3>

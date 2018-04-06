@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import "./index.css";
@@ -15,7 +15,7 @@ class Navigation extends Component {
       isOpenLogin: false,
       isOpenSignup: false,
       email : 'LOGIN',
-      isShowUserPage : false,
+      
 
 
       
@@ -35,16 +35,9 @@ class Navigation extends Component {
     });
   }
 
-  toggleShowUserPage = () =>{
-  
-  this.setState({
-    isShowUserPage: !this.state.isShowUserPage
- 
-    });
-}
 
   getCurrnetUser = () => {
-    let {email,password,orders} = JSON.parse(sessionStorage.getItem('currnet')); 
+    let {email} = JSON.parse(sessionStorage.getItem('currnet')); 
     
     return email
     // this.setState({
@@ -55,6 +48,34 @@ class Navigation extends Component {
     // })
      
     
+  }
+
+
+  showNavigationAfterLogin = () => {
+
+    return(
+      <nav className = "navigation">
+      <Link to="/" className="navigation__link"> Main</Link> 
+      <Link to="/about" className="navigation__link"> About</Link> 
+      <Link to="/menu" className="navigation__link"> Menu</Link>
+      <Link to="/contact" className="navigation__link"> Contact </Link>
+      
+            
+      <Link to="/personal"  className="navigation__link" >{ this.getCurrnetUser()} </Link>
+        <span  onClick={this.toggleShowUserPage} className="navigation__link" > LOGOUT</span>
+
+      <Link to="/login" className="navigation__link"  onClick={this.toggleModalLogin} >Login </Link>
+
+      <Link to="/signup" className="navigation__link" onClick={this.toggleModalSignup} > Sign Up</Link>
+       
+       <SignupForm show={this.state.isOpenSignup} onClose={this.toggleModalSignup}/>
+       <LoginForm show={this.state.isOpenLogin}  onClose={this.toggleModalLogin}/>
+         
+    </nav>
+
+    );
+
+
   }
 
   
@@ -102,43 +123,24 @@ class Navigation extends Component {
       <Link to="/menu" className="navigation__link"> Menu</Link>
       <Link to="/contact" className="navigation__link"> Contact </Link>
       
-      {/* {
-        (!this.state.isShowUserPage)
-         ? 
-        console.log(`isShowUserPage `)
-        :
-        <div>
-        <Link to="/personal" showUserPage={this.state.isShowUserPage} className="navigation__link" >{ this.getCurrnetUser()} </Link>
-        <span  onClick={this.toggleShowUserPage} className="navigation__link" > LOGOUT</span>
-        </div>
-      } */}
-      
-      <Link to="/personal" showUserPage={this.state.isShowUserPage} className="navigation__link" >{ this.getCurrnetUser()} </Link>
+            
+      <Link to="/personal"  className="navigation__link" >{ this.getCurrnetUser()} </Link>
         <span  onClick={this.toggleShowUserPage} className="navigation__link" > LOGOUT</span>
 
-      <Link to="/login" className="navigation__link" onShow={this.toggleShowUserPage} onClick={this.toggleModalLogin} >Login </Link>
+      <Link to="/login" className="navigation__link"  onClick={this.toggleModalLogin} >Login </Link>
 
       <Link to="/signup" className="navigation__link" onClick={this.toggleModalSignup} > Sign Up</Link>
        
        <SignupForm show={this.state.isOpenSignup} onClose={this.toggleModalSignup}/>
        <LoginForm show={this.state.isOpenLogin}  onClose={this.toggleModalLogin}/>
-     
-      
-      
+         
     </nav>
-    )
-      
-    
+    )       
   }
 
 
-
-
-
-
-
     render () {
-               console.log(this.state) 
+               
       return (
           this.firstVisit()
   
