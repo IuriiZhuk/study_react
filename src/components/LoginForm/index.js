@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+
 import './index.css';
 
 
@@ -11,6 +12,8 @@ class LoginForm extends Component {
     this.state = {
         email : '',
         password : ''
+        
+        
     };
 }
 
@@ -29,6 +32,9 @@ handlePasswordChange = (event) => {
         password : event.target.value
     });
 }
+
+
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -49,12 +55,14 @@ handlePasswordChange = (event) => {
     if (authenticatedUserIndex === -1 ) {alert(`Please check e-mail && password`)
     return;
   }
-    
+  
     alert(`You are successfully loggin`);
+   
     let currentUser = usersDb[authenticatedUserIndex];
     sessionStorage.setItem('currnet', JSON.stringify(currentUser));
    
     this.props.isUserLogin();
+    
     this.props.onClose();
 
     
@@ -68,6 +76,7 @@ handlePasswordChange = (event) => {
       if(!this.props.show) {
       return null;
     }
+   
         return (
            
                 <div className="loginFormModal" id="loginModal">
@@ -95,7 +104,7 @@ handlePasswordChange = (event) => {
                 
 
                 
-
+                
                   
               </div>          
             
@@ -106,7 +115,7 @@ handlePasswordChange = (event) => {
 
 LoginForm.proptypes = {
     show: PropTypes.bool,
-    isUserLogin : PropTypes.func,
+    isUserLogin : PropTypes.bool,
     onClose: PropTypes.func
 };
 

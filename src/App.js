@@ -1,5 +1,5 @@
 import React, {Component,Fragment} from 'react';
-import {  BrowserRouter as Router,  Route} from 'react-router-dom';
+import {  BrowserRouter as Router,  Route, Switch} from 'react-router-dom';
 
 
 
@@ -13,6 +13,7 @@ import BookForm from './components/BookForm';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Personal from './components/Personal';
+import NotFound from './components/NotFound';
 
 
 
@@ -27,16 +28,19 @@ class App extends Component {
       <Router>
         <Fragment>
             <Header />
-
-            <Route exact path="/" component={MainContent} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/menu" component={MenuMainContent} />
-            <Route exact path="/contact" component={Contacts} />
-            <Route exact path="/book" component={BookForm} />
-            <Route exact path="/login" component={LoginForm} />
-            <Route exact path="/signup" component={SignupForm} />
-            <Route exact path = "/personal" component={Personal}/>
+            <Switch>
+              <Route exact path="/" component={MainContent} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/menu" component={MenuMainContent} />
+              <Route exact path="/contact" component={Contacts} />
+              <Route exact path="/book" component={BookForm} />
+              <Route exact path="/login" component={LoginForm} />
+              <Route exact path="/signup" component={SignupForm} />
+              <Route exact path = "/personal" component={Personal}/>
+              <Route  component={NotFound} />
+            </Switch>
             <Footer />
+
           </Fragment>
       </Router>
     );

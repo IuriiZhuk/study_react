@@ -22,17 +22,20 @@ function Footer () {
         />
         </a>
 
-        <a href ="www.vk.com">
+        <a href ="www.vk.com" >
         <FontAwesome
         className="social__link"
-        name="vk"     
+        name="vk"  
+        
+        
         />
         </a>
 
         <a href ="www.twitter.com">
         <FontAwesome
         className="social__link"
-        name="twitter-square"              
+        name="twitter-square"    
+                
         />
         </a>
           
