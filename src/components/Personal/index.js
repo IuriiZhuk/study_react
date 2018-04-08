@@ -19,8 +19,14 @@ class Personal extends Component {
 
 
   getCurrnetUser = () => {
+
+    let currentUser = JSON.parse(sessionStorage.getItem('currnet'));
+    let allUsers = JSON.parse(sessionStorage.getItem('users')); 
+    let activeUserIndex = allUsers.findIndex( (item) => item.email === currentUser.email  );
+
+
     
-    let {email,password,orders} = JSON.parse(sessionStorage.getItem('currnet')); 
+    let {email,password,orders} = allUsers[activeUserIndex]; 
        
     this.setState({
       email,
@@ -33,7 +39,12 @@ class Personal extends Component {
   
 
   getOrders = () => {
-    let {orders} = JSON.parse(sessionStorage.getItem('currnet')); 
+
+    let currentUser = JSON.parse(sessionStorage.getItem('currnet'));
+    let allUsers = JSON.parse(sessionStorage.getItem('users')); 
+    let activeUserIndex = allUsers.findIndex( (item) => item.email === currentUser.email  );
+
+    let {orders} = allUsers[activeUserIndex];
     
    
     this.setState({
@@ -74,13 +85,20 @@ class Personal extends Component {
       orders : orders
     })
 
+
     let userAfterDelete = {
       email: this.state.email,
       password :this.state.password,
       orders : this.state.orders
     }
+    
+    let currentUser = JSON.parse(sessionStorage.getItem('currnet'));
+    let allUsers = JSON.parse(sessionStorage.getItem('users')); 
+    let activeUserIndex = allUsers.findIndex( (item) => item.email === currentUser.email  );
 
-    sessionStorage.setItem('currnet', JSON.stringify(userAfterDelete)); 
+    allUsers.splice(activeUserIndex,1,userAfterDelete);
+
+    sessionStorage.setItem('users', JSON.stringify(allUsers)); 
 
   }
 

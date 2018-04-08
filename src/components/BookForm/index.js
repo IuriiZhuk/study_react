@@ -56,15 +56,22 @@ class BookForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault(); 
 
-    let currentUser = this.getUser();
-    let orderList = currentUser.orders.concat(this.state);
+    let currentUser = JSON.parse(sessionStorage.getItem('currnet'));
+    let allUsers = JSON.parse(sessionStorage.getItem('users')); 
+    let activeUserIndex = allUsers.findIndex( (item) => item.email === currentUser.email  );
+
+    let orderList = allUsers[activeUserIndex].orders.concat(this.state);
 
     let userAfterOrder = {
-      email: currentUser.email,
-      password : currentUser.password,
+      email: allUsers[activeUserIndex].email,
+      password : allUsers[activeUserIndex].password,
       orders : orderList
     }
-    sessionStorage.setItem('currnet', JSON.stringify(userAfterOrder));
+    
+  
+    allUsers.splice(activeUserIndex,1,userAfterOrder);
+
+    sessionStorage.setItem('users', JSON.stringify(allUsers));
     this.props.onChangeOrder();
     this.props.onClose();
    

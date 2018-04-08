@@ -14,6 +14,7 @@ import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Personal from './components/Personal';
 import NotFound from './components/NotFound';
+import GetUser from './components/GetUser';
 
 
 
@@ -37,6 +38,7 @@ class App extends Component {
               <Route exact path="/login" component={LoginForm} />
               <Route exact path="/signup" component={SignupForm} />
               <Route exact path = "/personal" component={Personal}/>
+              <Route exaxt path ="/getuser" component={GetUser}/>
               <Route  component={NotFound} />
             </Switch>
             <Footer />
