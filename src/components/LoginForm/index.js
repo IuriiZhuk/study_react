@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
+import {Redirect} from 'react-router-dom';
 
 import './index.css';
 
@@ -40,10 +40,7 @@ handlePasswordChange = (event) => {
     event.preventDefault();
     let state = this.state;
 
-    let usersDb = JSON.parse(sessionStorage.getItem('users'));
-
-    console.log(usersDb);
-
+    let usersDb = JSON.parse(sessionStorage.getItem('users'));  
     let user = {
         email : state.email,
         password : state.password
@@ -101,7 +98,7 @@ handlePasswordChange = (event) => {
                      
                     </div>
                   </form>
-                
+                  {<Redirect to={'/'}/>}
 
                 
                 
@@ -115,7 +112,6 @@ handlePasswordChange = (event) => {
 
 LoginForm.proptypes = {
     show: PropTypes.bool,
-    isUserLogin : PropTypes.func,
     onClose: PropTypes.func
 };
 
