@@ -22,7 +22,7 @@ class Navigation extends Component {
 
   toggleModalLogin = () => {
     this.setState({
-    isOpenLogin: !this.state.isOpenLogin
+      isOpenLogin: !this.state.isOpenLogin
  
     });
   }
@@ -127,27 +127,7 @@ class Navigation extends Component {
     return (
 
       this.showNavigationAfterLogin()
-
-    //   <nav className = "navigation">
-    //   <Link to="/" className="navigation__link"> Main</Link> 
-    //   <Link to="/about" className="navigation__link"> About</Link> 
-    //   <Link to="/menu" className="navigation__link"> Menu</Link>
-    //   <Link to="/contact" className="navigation__link"> Contact </Link>
-      
-            
-    //   <Link to="/personal"  className="navigation__link" >{ this.getCurrnetUser()} </Link>
-    //     <span  onClick={this.toggleShowUserPage} className="navigation__link" > LOGOUT</span>
-
-    //   <Link to="/login" className="navigation__link"  onClick={this.toggleModalLogin} >Login </Link>
-
-    //   <Link to="/signup" className="navigation__link" onClick={this.toggleModalSignup} > Sign Up</Link>
-       
-    //    <SignupForm show={this.state.isOpenSignup} onClose={this.toggleModalSignup}/>
-    //    <LoginForm show={this.state.isOpenLogin}  onClose={this.toggleModalLogin}/>
-         
-    // </nav>
-
-    )       
+        )       
   }
 
 

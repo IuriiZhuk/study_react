@@ -115,7 +115,7 @@ handlePasswordChange = (event) => {
 
 LoginForm.proptypes = {
     show: PropTypes.bool,
-    isUserLogin : PropTypes.bool,
+    isUserLogin : PropTypes.func,
     onClose: PropTypes.func
 };
 
