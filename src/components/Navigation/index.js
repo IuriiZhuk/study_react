@@ -117,7 +117,7 @@ class Navigation extends Component {
         <Link to="/login" className="navigation__link" onShow={this.toggleShowUserPage} onClick={this.toggleModalLogin} >Login </Link>
        
         <SignupForm show={this.state.isOpenSignup} onClose={this.toggleModalSignup}/>
-        <LoginForm show={this.state.isOpenLogin}  onClose={this.toggleModalLogin}/>
+        <LoginForm show={this.state.isOpenLogin}  onClose={this.toggleModalLogin} isUserLogin={this.toggleShowUserLogin}/>
       </nav>
       )
 
