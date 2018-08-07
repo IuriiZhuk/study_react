@@ -1,15 +1,8 @@
-import React from "react";
+import React from 'react'
+import './index.css'
 
-import "./index.css";
-
-function Link (props) {
-  
-  return (
-   
-    <a className = "navigation__link" >
-      {props.title}
-    </a>
-  );
+function Link(props) {
+  return <a className="navigation__link">{props.title}</a>
 }
 
-export default Link ;
+export default Link
