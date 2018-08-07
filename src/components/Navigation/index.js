@@ -175,7 +175,7 @@ class Navigation extends Component {
           <Link
             to="/login"
             className="navigation__link"
-            onShow={this.toggleShowUserPage}
+            onShow={this.toggleShowUserLogin}
             onClick={this.toggleModalLogin}
           >
             Login{' '}

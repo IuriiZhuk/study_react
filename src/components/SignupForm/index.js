@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import './index.css'
@@ -108,8 +107,6 @@ class SignupForm extends Component {
             </div>
           </div>
         </form>
-
-        {<Redirect to={'/'} />}
       </div>
     )
   }
