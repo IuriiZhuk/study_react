@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import "./index.css";
+import './index.css'
 
-function Details () {
+function Details() {
   return (
     <section className="details">
       <div className="details__position">
@@ -11,7 +11,7 @@ function Details () {
         <button className="details__btn">Preparation of Our Dishes</button>
       </div>
     </section>
-  );
+  )
 }
 
-export default Details;
+export default Details

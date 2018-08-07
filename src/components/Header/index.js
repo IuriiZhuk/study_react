@@ -1,21 +1,18 @@
-import React from 'react';
+import React from 'react'
 
+import Logo from '../Logo'
+import Navigation from '../Navigation'
+import './style.css'
 
-import Logo from "../Logo";
-import Navigation from "../Navigation";
-import "./style.css" ;
-
-function Header () {
+function Header() {
   return (
-    <header className = "main-header">
-      <div className = "main-header__inner" >
-        <Logo styleName="main-header"/>
+    <header className="main-header">
+      <div className="main-header__inner">
+        <Logo styleName="main-header" />
         <Navigation />
       </div>
-
     </header>
-  );
+  )
 }
 
-
-export default Header;
+export default Header

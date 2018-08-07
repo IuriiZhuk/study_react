@@ -1,30 +1,22 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import "./index.css";
+import './index.css'
 
-function DishesTypeItem (props) {
-  
-  
+function DishesTypeItem(props) {
   return (
     <div className={` ${props.styleName} dishes-type-item`}>
       <h3 className={` ${props.styleName}__title`}>{props.title}</h3>
-      <div className={` ${props.styleName}__separate`}></div>
+      <div className={` ${props.styleName}__separate`} />
       <p className={` ${props.styleName}__description`}>{props.description}</p>
     </div>
-
-  );
-
+  )
 }
 
-
 DishesTypeItem.propTypes = {
-  styleName : PropTypes.string,
-  description : PropTypes.string,
-  title : PropTypes.string
+  styleName: PropTypes.string,
+  description: PropTypes.string,
+  title: PropTypes.string,
+}
 
-};
-
-
-
-export default DishesTypeItem;
+export default DishesTypeItem

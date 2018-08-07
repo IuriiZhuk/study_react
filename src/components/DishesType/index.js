@@ -1,34 +1,29 @@
-import React from "react";
+import React from 'react'
 
-import DishesTypeItem from '../DishesTypeItem';
+import DishesTypeItem from '../DishesTypeItem'
 
-import "./index.css";
+import './index.css'
 
-function DishesType () {
+function DishesType() {
   return (
     <section className="main-page-dishes-type">
-      <DishesTypeItem 
+      <DishesTypeItem
         title="Desserts"
         description="Lorem ipsum dolor sit."
-        styleName= "desserts"
+        styleName="desserts"
       />
-      <DishesTypeItem 
+      <DishesTypeItem
         title="Smoothies"
         description="Lorem ipsum dolor sit."
-        styleName="smoothies" 
+        styleName="smoothies"
       />
-      <DishesTypeItem 
+      <DishesTypeItem
         title="Breakfast"
         description="Lorem ipsum dolor sit."
-        styleName= "breakfast"
+        styleName="breakfast"
       />
-      
-    
-    
     </section>
-  );
-
+  )
 }
 
-
-export default DishesType;
+export default DishesType

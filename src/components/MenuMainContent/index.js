@@ -1,8 +1,8 @@
 import React from 'react'
-import MainContentHead from '../MainContentHead';
-import Menu from '../Menu';
+import MainContentHead from '../MainContentHead'
+import Menu from '../Menu'
 
-function MenuMainContent () {
+function MenuMainContent() {
   return (
     <main className="maincontent">
       <div className="main-content__inner">
@@ -10,9 +10,7 @@ function MenuMainContent () {
         <Menu />
       </div>
     </main>
-
-  );
-
+  )
 }
 
-export default MenuMainContent;
+export default MenuMainContent
